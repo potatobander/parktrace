@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17221e">
+  <meta name="description" content="拍搭，让朋友互拍更轻松。根据环境推荐姿势，用动画参考与轻发光轮廓辅助取景，拍完再给出构图建议。立即体验互动演示。">
+  <meta property="og:title" content="拍搭 PAIDA · 你负责自在，拍搭负责怎么拍">
+  <meta property="og:description" content="场景推荐、动画姿势、轻轮廓引导与拍后评估。试着拍一张，看看有什么不同。">
+  <meta property="og:type" content="website">
+  <title>拍搭 PAIDA · 让每一次互拍，都更合拍</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/scenes/campus.svg">
+  <link rel="preload" as="image" href="assets/poses/wall_space.webp">
+  <script defer src="assets/pose-data.js"></script>
+  <script defer src="demo-model.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-frame" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16m6-16v16M4 9h16M4 15h16"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  </defs></svg>
+
+  <header class="site-header wrap">
+    <a href="#" class="brand" aria-label="拍搭，返回首页"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍搭<span class="brand-latin">PAIDA</span></span></a>
+    <nav aria-label="主导航"><a href="#how-it-works">产品故事</a><a href="#poses">姿势灵感</a><a href="#about">关于拍搭</a></nav>
+    <a class="nav-cta" href="#experience">体验一下 <svg class="icon"><use href="#i-arrow"/></svg></a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="experience" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> YOUR EVERYDAY PHOTO PARTNER</div>
+        <h1 id="hero-title">你负责自在，<br>拍搭负责<br class="small-break"><em>怎么拍。</em></h1>
+        <p class="hero-description">少一点“我该怎么站”，多一点自然好看。<br>从姿势到构图，给互拍的你们一点灵感。</p>
+        <div class="hero-actions"><button class="button button-mint" id="start-demo">开始体验 <svg class="icon"><use href="#i-arrow"/></svg></button><a class="text-link" href="#how-it-works">了解拍搭 <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-tags"><span><svg class="icon"><use href="#i-spark"/></svg>看场景推荐</span><span><svg class="icon"><use href="#i-frame"/></svg>跟轮廓取景</span><span><svg class="icon"><use href="#i-check"/></svg>拍完给建议</span></div>
+        <div class="hero-footnote"><span>为朋友互拍而设计</span><span>Android 原型 · v0.3.0</span></div>
+      </div>
+
+      <div class="demo-shell" id="demo" aria-label="拍搭相机交互演示">
+        <div class="demo-caption"><span>TRY A LITTLE. FEEL THE DIFFERENCE.</span><span class="demo-pill">动画交互演示</span></div>
+        <div class="scene-tabs" role="group" aria-label="选择示例场景">
+          <button data-scene="campus" aria-pressed="true"><span>01</span> 校园墙边</button>
+          <button data-scene="park" aria-pressed="false"><span>02</span> 公园漫步</button>
+          <button data-scene="cafe" aria-pressed="false"><span>03</span> 窗边咖啡</button>
+        </div>
+        <div class="camera" id="camera">
+          <div class="viewfinder" id="viewfinder">
+            <canvas id="camera-canvas" width="720" height="960" role="img" aria-label="示例场景：校园墙边，尚未有人入镜。">浏览器需要支持 Canvas 才能显示相机演示。</canvas>
+            <div class="camera-top"><span class="camera-status" id="camera-status"><span></span>等待人物入镜</span><button class="icon-button" id="toggle-grid" aria-label="显示九宫格" aria-pressed="false"><svg class="icon"><use href="#i-grid"/></svg></button></div>
+            <div class="empty-state" id="empty-state"><span class="empty-focus" aria-hidden="true"></span><p>先看风景，<br>等你入镜。</p><button id="enter-person">让同伴入镜 <span aria-hidden="true">＋</span></button></div>
+            <div class="matching-state" id="matching-state" hidden><span class="scan-dot"></span> 正在匹配场景与姿势</div>
+            <div class="viewfinder-hint" id="viewfinder-hint" hidden>轻松站定，肩膀放松</div>
+            <div class="crop-guide" id="crop-guide" hidden><span>建议保留区域</span><i></i><i></i><i></i><i></i></div>
+            <span class="frame-label" id="frame-label">PAIDA / CAMPUS</span>
+            <div class="shutter-flash" id="shutter-flash" aria-hidden="true"></div>
+          </div>
+          <div class="camera-controls" id="camera-controls">
+            <button class="pose-preview" id="pose-preview" aria-label="查看推荐姿势参考" disabled><img id="pose-thumbnail" src="assets/poses/wall_space.webp" width="42" height="56" alt=""><span id="pose-title">等待推荐</span></button>
+            <button class="shutter" id="shutter" aria-label="拍一张示例照片" disabled><span></span></button>
+            <button class="outline-control" id="toggle-outline" aria-pressed="true" disabled><svg class="icon"><use href="#i-eye"/></svg><span>轻轮廓</span></button>
+          </div>
+          <div class="photo-review" id="photo-review" hidden>
+            <div class="review-eyebrow">这一张 <span>示例构图评估</span></div>
+            <h3 id="review-title"></h3><p id="review-text"></p>
+            <div class="review-actions"><button id="retake">继续拍摄 <svg class="icon"><use href="#i-repeat"/></svg></button><button id="toggle-crop" aria-pressed="true" hidden>隐藏裁剪框</button></div>
+          </div>
+        </div>
+        <div class="demo-controls" id="demo-controls">
+          <div class="demo-control-row"><button id="toggle-person" aria-pressed="false"><svg class="icon"><use href="#i-person"/></svg><span>人物入镜</span></button><button id="next-pose" disabled>换个推荐 <svg class="icon"><use href="#i-repeat"/></svg></button></div>
+          <label for="distance" class="range-label"><span>调整取景距离</span><output id="distance-label" for="distance">取景合适</output></label>
+          <input type="range" id="distance" min="0" max="100" value="50" step="1" aria-describedby="range-help" disabled>
+          <div class="range-endpoints" id="range-help"><span>远一点 · 留白更多</span><span>近一点 · 人物更大</span></div>
+        </div>
+        <p class="demo-disclaimer">示例场景演示功能逻辑，不调用摄像头，也不上传照片。</p>
+        <p class="sr-only" id="live-status" role="status" aria-live="polite"></p>
+        <noscript><p class="noscript">请启用 JavaScript 体验交互演示。你仍然可以浏览下方的产品介绍。</p></noscript>
+      </div>
+    </section>
+
+    <section class="story" id="how-it-works" aria-labelledby="story-title">
+      <div class="wrap">
+        <div class="section-heading"><span class="eyebrow dark">01 / A LITTLE GUIDANCE</span><h2 id="story-title">不用一开始，<br>就知道怎么拍。</h2><p>让拍照回到相处本身。<br>需要的时候，拍搭才轻轻提醒。</p></div>
+        <div class="story-steps">
+          <article><div class="step-top"><span>01</span><svg class="icon"><use href="#i-spark"/></svg></div><h3>先看看，你在哪里。</h3><p>同伴稳定入镜后，结合开阔背景、墙边或桌椅线索，推荐适合当下的姿势。</p><span class="detail-tag">从环境开始推荐</span></article>
+          <article><div class="step-top"><span>02</span><svg class="icon"><use href="#i-frame"/></svg></div><h3>给方向，也留空间。</h3><p>动画参考帮你看懂动作。细发光轮廓辅助取景，想自由发挥时，一键隐藏。</p><span class="detail-tag">人物出现，轮廓才出现</span></article>
+          <article><div class="step-top"><span>03</span><svg class="icon"><use href="#i-check"/></svg></div><h3>拍完，再好一点。</h3><p>留白太多，看看裁剪参考；人物贴边，试试扩大取景。每次只给有用的建议。</p><span class="detail-tag">保留原片，由你决定</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pose-section wrap" id="poses" aria-labelledby="pose-section-title">
+      <div class="pose-section-copy"><span class="eyebrow">02 / LESS GUESSING, MORE FEELING</span><h2 id="pose-section-title">动作不用猜，<br>一眼就明白。</h2><p>自然站定、侧身回望，或只是坐着看风景。<br>12 个动画姿势参考，让表达更轻松。</p><button class="text-link" id="open-gallery">看看所有姿势 <span aria-hidden="true">↗</span></button><span class="pose-caption">全动画参考 · 轻松找到感觉</span></div>
+      <div class="pose-editorial" aria-label="三种动画姿势参考">
+        <figure class="pose-card pose-card-one"><img src="assets/poses/open_weight.webp" width="576" height="768" loading="lazy" alt="动画人物一侧承重，另一条腿自然放松"><figcaption><span>重心放松</span><small>RELAX</small></figcaption></figure>
+        <figure class="pose-card pose-card-two"><img src="assets/poses/open_turn.webp" width="576" height="768" loading="lazy" alt="动画人物侧身站立，回头看向镜头"><figcaption><span>侧身回望</span><small>TURN</small></figcaption></figure>
+        <figure class="pose-card pose-card-three"><img src="assets/poses/table_arm.webp" width="576" height="768" loading="lazy" alt="动画人物坐在桌边，前臂轻放桌面"><figcaption><span>前臂轻放</span><small>TAKE IT EASY</small></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="review-story wrap" aria-labelledby="review-story-title">
+      <div class="review-visual" aria-hidden="true"><div class="mini-photo"><img src="assets/poses/open_front.webp" width="576" height="768" loading="lazy" alt=""><div class="mini-crop"><span>少一点留白，多一点主角。</span></div><span class="mini-photo-label">COMPOSITION / 03</span></div><span class="review-stamp"><svg class="icon"><use href="#i-check"/></svg> 原片始终保留</span></div>
+      <div class="review-story-copy"><span class="eyebrow">03 / ONE SHOT, ONE SMALL IMPROVEMENT</span><h2 id="review-story-title">按下快门，<br>还有下一点灵感。</h2><p>没有一个生硬的“颜值分数”。<br>拍搭关注画面：人物大小、边缘留白与光线，<br>把“哪里不太对”变成“可以试试这样”。</p><button class="text-link" id="try-review">试试拍后评估 <span aria-hidden="true">↗</span></button></div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-layout"><div><span class="eyebrow dark">MADE FOR REAL MOMENTS</span><h2 id="about-title">把注意力，<br>留给眼前的人。</h2><a class="button button-dark" href="#experience">再拍一张 <svg class="icon"><use href="#i-arrow"/></svg></a></div><div class="about-notes"><div><svg class="icon"><use href="#i-shield"/></svg><div><h3>日常拍摄，在本机完成。</h3><p>Android 版的基础姿势推荐与拍后评估在本机处理，不自动上传照片。</p></div></div><div><svg class="icon"><use href="#i-person"/></svg><div><h3>从单人互拍开始。</h3><p>当前为 Android 8.0+ 测试原型 v0.3.0，面向单人人像。真实识别效果会受到光线、遮挡与设备影响。</p></div></div><details><summary>网页演示与 Android 版有什么区别？</summary><p>网页使用动画人物与预设场景，依据你调整的取景比例展示建议，不进行真实 AI 识别。Android 版通过相机观察画面，并在拍照后分析实际照片。裁剪框仅供参考；应用不会自动裁图，也不测量后退几米。</p></details></div></div></section>
+  </main>
+
+  <footer class="wrap site-footer"><a class="brand" href="#"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍搭<span class="brand-latin">PAIDA</span></span></a><span>让每一次互拍，都更合拍。</span><span class="footer-meta">PRODUCT EXPLORATION / 2026</span></footer>
+
+  <dialog class="pose-dialog" id="pose-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><span class="eyebrow dark">A LITTLE INSPIRATION</span><h2 id="dialog-title">找到自然的自己。</h2></div><button class="icon-button" id="close-dialog" aria-label="关闭姿势参考"><svg class="icon"><use href="#i-close"/></svg></button></div><p class="dialog-intro" id="dialog-intro">12 个动画姿势参考，按实际环境选择安全、舒适的动作。</p><div class="pose-grid" id="pose-grid"></div><button class="button button-dark dialog-done" id="dialog-done">看懂了，去拍照 <svg class="icon"><use href="#i-arrow"/></svg></button></dialog>
+</body>
+</html>

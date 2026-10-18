@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
+<defs><linearGradient id="wall" x2="1" y2="1"><stop stop-color="#efe6d4"/><stop offset="1" stop-color="#c5b89d"/></linearGradient><linearGradient id="floor" x2="1" y2="1"><stop stop-color="#b8ae93"/><stop offset="1" stop-color="#d9ccb1"/></linearGradient><linearGradient id="window" x2="0" y2="1"><stop stop-color="#bac9af"/><stop offset="1" stop-color="#e1e3ca"/></linearGradient></defs>
+<rect width="720" height="960" fill="url(#wall)"/><path d="M0 670h720v290H0Z" fill="url(#floor)"/>
+<path d="M0 678h720" stroke="#a29276" stroke-width="6"/>
+<rect x="55" y="82" width="348" height="470" rx="3" fill="#877f68"/><rect x="73" y="100" width="312" height="428" fill="url(#window)"/>
+<g fill="#94aa7e"><ellipse cx="108" cy="398" rx="74" ry="113"/><ellipse cx="272" cy="419" rx="94" ry="85"/><ellipse cx="347" cy="361" rx="42" ry="113"/></g>
+<path d="M229 100v427M73 314h312" stroke="#dad2ba" stroke-width="12"/>
+<path d="M51 548h360v15H51Z" fill="#a89a7c"/><path d="m72 565 334 8 314 337H397Z" fill="#faf2cf" opacity=".35"/>
+<path d="M541 0v109" stroke="#6c6957" stroke-width="3"/><path d="M541 107c-58 0-78 46-78 72h156c0-27-21-72-78-72Z" fill="#6d7a5b"/><ellipse cx="541" cy="180" rx="78" ry="9" fill="#ece3c4"/>
+<rect x="493" y="292" width="130" height="149" fill="#aea48c"/><rect x="501" y="300" width="114" height="133" fill="#e1dbca"/><path d="M521 408q12-48 34-74 28 29 41 74Z" fill="#91a17b"/><circle cx="579" cy="329" r="11" fill="#c9b783"/>
+<path d="M636 629v-133" stroke="#71805b" stroke-width="4"/><g fill="#829569"><ellipse cx="615" cy="539" rx="31" ry="12" transform="rotate(30 615 539)"/><ellipse cx="658" cy="511" rx="31" ry="11" transform="rotate(-36 658 511)"/><ellipse cx="618" cy="488" rx="25" ry="10" transform="rotate(42 618 488)"/><ellipse cx="659" cy="565" rx="29" ry="11" transform="rotate(-32 659 565)"/></g><path d="m601 607 11 69h50l11-69Z" fill="#b79e7a"/>
+<path d="M0 818h720M181 678 83 960m364-282 44 282" stroke="#b5a98d" stroke-width="2" opacity=".55"/>
+</svg>
