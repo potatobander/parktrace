@@ -1,0 +1,24 @@
+{
+  "version": "0.4.0",
+  "updated": "2026-10-19",
+  "knowledge": {
+    "videos": 6,
+    "books": 3,
+    "guides": 6,
+    "rules": 20,
+    "local_action_seeds": 24
+  },
+  "behavior": {
+    "web": "local context rules, no camera or cloud inference",
+    "android": "open generated-action protocol; model key and live validation required"
+  },
+  "verification": {
+    "web_unit_tests": 13,
+    "browser_widths": [
+      390,
+      1440
+    ],
+    "js_syntax": "passed"
+  },
+  "source_commit": "212a63aa8693b66621fee4f0c3e8d2c72a3ac638"
+}
