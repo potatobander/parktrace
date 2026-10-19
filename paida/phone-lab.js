@@ -1,0 +1,13 @@
+(()=>{'use strict';const $=id=>document.getElementById(id),K=window.PaidaKnowledge,C=window.PaidaPhoneCoach;let round=0,history=[];
+ const esc=s=>String(s).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
+ function render(){const context={scene:$('lab-scene').value,light:$('lab-light').value,intent:$('lab-intent').value,framing:$('lab-framing').value,motion:$('lab-motion').checked,props:[...document.querySelectorAll('[data-prop]:checked')].map(x=>x.dataset.prop)};
+ const cards=C.recommend(context,history,round++);history=[...history,...cards.map(x=>x.id)].slice(-9);
+ $('lab-status').textContent=`本地规则推荐 · ${context.light==='low'?'弱光已优先选择静态动作':'每组提供不同动作'} · 可以换一组`;
+ $('lab-results').innerHTML=cards.map((c,i)=>`<article class="lab-card"><span class="eyebrow dark">0${i+1} / ${c.framing==='environment'?'环境人像':c.framing==='half'?'半身人像':'自然全身'}</span><h3>${esc(c.title)}</h3><p class="lab-reason">${esc(c.reason)}</p><ol>${c.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><h4>拍摄者这样做</h4><p>${esc(c.composition)}</p><h4>先看这束光</h4><p>${esc(c.light)}</p><details><summary>为什么这样推荐？</summary><p>${c.knowledge_ids.map(id=>{const r=K.rules.find(r=>r.id===id);return esc(r.title+'：'+r.text);}).join('<br>')}</p><p>替代动作：${esc(c.alternative)}</p></details><button class="lab-copy" data-copy="${i}">复制给同伴</button></article>`).join('');
+ document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{const c=cards[Number(b.dataset.copy)],t=[c.title,...c.steps,'取景：'+c.composition,'光线：'+c.light].join('\n');try{await navigator.clipboard.writeText(t);b.textContent='已复制'}catch{$('lab-copy-fallback').hidden=false;$('lab-copy-fallback').value=t;$('lab-copy-fallback').focus();$('lab-copy-fallback').select();b.textContent='请复制下方文字'}});
+ }
+ $('lab-next').onclick=render;$('lab-form').onchange=()=>{history=[];render()};
+ function sources(type){document.querySelectorAll('[data-source-type]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceType===type)));$('learning-sources').innerHTML=K.sources.filter(s=>s.type===type).map(s=>`<article class="source-card"><span>${esc(s.id)} · ${esc(s.author)}</span><h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></h3><p>${esc(s.note)}</p><small>${esc(s.scope)}${s.isbn?'<br>ISBN '+esc(s.isbn):''}</small></article>`).join('')}
+ document.querySelectorAll('[data-source-type]').forEach(b=>b.onclick=()=>sources(b.dataset.sourceType));
+ $('knowledge-rules').innerHTML=K.rules.map(r=>`<details><summary>${r.id} · ${esc(r.title)}</summary><p>${esc(r.text)}</p><small>${esc(r.kind)}${r.source_ids.length?' · 来源 '+r.source_ids.join('、'):''}</small></details>`).join('');render();sources('video');
+})();

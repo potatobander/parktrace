@@ -190,7 +190,7 @@
     dialogTrigger = document.activeElement;
     const items = single ? [activePose()] : [...poses.values()];
     $('dialog-title').textContent = single ? activePose().name : '找到自然的自己。';
-    $('dialog-intro').textContent = single ? '当前推荐 · ' + activePose().scene : '12 个动画姿势参考，按实际环境选择安全、舒适的动作。';
+    $('dialog-intro').textContent = single ? '当前推荐 · ' + activePose().scene : '动画动作示例，按实际环境选择安全、舒适的动作。';
     const grid = $('pose-grid'); grid.replaceChildren(); grid.classList.toggle('single', single);
     for (const pose of items) {
       const article = document.createElement('article'); article.className = 'gallery-item' + (single ? ' single' : '');
@@ -232,3 +232,4 @@
   loadImage('assets/poses/wall_space.webp').catch(() => {});
   updateUI();
 })();
+
