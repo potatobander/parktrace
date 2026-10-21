@@ -24,3 +24,30 @@
 .feature-grid article:hover,.lab-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px #0002}
 section[id]{scroll-margin-top:95px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Persona evaluation section */
+.persona-section{background:#e9eee1;color:#233429;padding:95px 0 105px}
+.persona-heading{max-width:930px;margin-bottom:38px}
+.persona-heading .eyebrow{color:#58724b;font-size:13px}
+.persona-heading h2{font-size:clamp(38px,4.3vw,66px);line-height:1.22;letter-spacing:-.04em;margin:18px 0}
+.persona-heading>p{font-size:18px;line-height:1.8;color:#566956}
+.persona-notice{margin-top:26px;padding:19px 23px;background:#dce8d2;border-left:4px solid #5d8555;border-radius:0 12px 12px 0;font-size:14px;line-height:1.8;color:#344c37}
+.persona-notice strong:first-child{display:block;margin-bottom:4px}
+.persona-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.persona-card{background:#fffef9;border:1px solid #d3decb;border-radius:19px;padding:25px;box-shadow:0 5px 20px #203d1d08;transition:transform .25s,box-shadow .25s}
+.persona-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px #203d1d16}
+.persona-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.persona-index{font-size:13px;color:#67835b;letter-spacing:.12em}
+.persona-badge{font-size:11px;border-radius:99px;background:#e9f2e3;color:#4f7045;padding:5px 10px}
+.persona-card h3{font-size:25px;font-weight:650}
+.persona-meta{font-size:13px!important;color:#71816d;margin:4px 0 18px!important}
+.persona-card p{font-size:15px;line-height:1.7;margin-top:12px;color:#475b49}
+.persona-card p strong{display:block;font-size:12px;letter-spacing:.03em;margin-bottom:4px;color:#647663}
+.persona-good{padding:13px 14px;border-radius:10px;background:#eaf5e6}
+.persona-bad{padding:13px 14px;border-radius:10px;background:#fff0e9}
+.persona-action{border-top:1px solid #e1e8dd;padding-top:12px}
+.persona-summary{margin-top:27px;padding:26px 30px;border-radius:16px;background:#263c2d;color:#f0f5ea}
+.persona-summary h3{font-size:22px;margin-bottom:10px}
+.persona-summary p{font-size:16px;line-height:1.8;color:#d0dfcc}
+@media(max-width:1050px){.persona-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.persona-section{padding:60px 0}.persona-grid{grid-template-columns:1fr}.persona-card{padding:22px}.persona-heading>p{font-size:16px}.persona-notice{font-size:13px}.persona-heading h2{font-size:38px}}
