@@ -1,6 +1,8 @@
 {
-  "version": "0.4.0",
-  "updated": "2026-10-19",
+  "product": "拍档",
+  "version": "0.6.0",
+  "website_version": "1.2.0",
+  "updated": "2026-10-21",
   "knowledge": {
     "videos": 6,
     "books": 3,
@@ -9,16 +11,21 @@
     "local_action_seeds": 24
   },
   "behavior": {
-    "web": "local context rules, no camera or cloud inference",
-    "android": "open generated-action protocol; model key and live validation required"
+    "web": "preset animated camera and spoken examples; local context rules; no camera, cloud inference or uploads",
+    "android": "AI guidance entry, generated spoken directions, optional automatic zoom, photo ratios and local suggestion history; configured proxy and model API required",
+    "download": "project test distribution; no public APK release"
   },
   "verification": {
     "web_unit_tests": 13,
-    "browser_widths": [
+    "js_syntax": "passed",
+    "browser_interaction": "passed: AI examples, scene changes, capture, crop hint, local recommendations, copy fallback, source tabs and gallery",
+    "real_model_and_android_device": "not verified by website update",
+    "html_resources_and_anchors": "passed",
+    "browser_viewport_width": 1363,
+    "responsive_iframe_widths": [
       390,
-      1440
+      768
     ],
-    "js_syntax": "passed"
-  },
-  "source_commit": "212a63aa8693b66621fee4f0c3e8d2c72a3ac638"
+    "responsive_overflow": "none at tested widths"
+  }
 }
