@@ -16,7 +16,7 @@
     return { x: (1 - height) / 2, y: .52 - height / 2, width: height, height };
   }
   function evaluateShot({ present, distance, framing = 'full', bounds = [.29, .03, .71, .97] }) {
-    if (!present) return { kind: 'empty', title: '还没有清晰的人物入镜。', text: '请同伴进入画面后再试试，拍搭不会勉强给出人像构图建议。', crop: null };
+    if (!present) return { kind: 'empty', title: '还没有清晰的人物入镜。', text: '请同伴进入画面后再试试，拍档不会勉强给出人像构图建议。', crop: null };
     const box = getGeometry(distance);
     const person = { x1: box.x + bounds[0] * box.width, y1: box.y + bounds[1] * box.height, x2: box.x + bounds[2] * box.width, y2: box.y + bounds[3] * box.height };
     if (person.y1 < .055 || person.y2 > .95 || person.x1 < .055 || person.x2 > .945) return { kind: 'tight', title: '稍微后退，给画面留一点空间。', text: '人物或动作已经贴近边缘。扩大取景，先保留完整的头部与动作，再按下快门。', crop: null };
@@ -32,3 +32,4 @@
   function distanceLabel(distance) { return distance < 27 ? '留白偏多' : distance > 80 ? '画面偏满' : '取景合适'; }
   return Object.freeze({ scenes, getGeometry, evaluateShot, distanceLabel, clamp });
 });
+

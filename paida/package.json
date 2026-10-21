@@ -1,8 +1,8 @@
 {
   "name": "paida-product-website",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
-  "description": "拍搭产品介绍与动画相机交互演示，GitHub Pages 静态网站",
+  "description": "拍档 AI 手机摄影产品介绍与动画交互演示，GitHub Pages 静态网站",
   "scripts": {
     "test": "node --test tests/*.test.cjs",
     "check": "node --check app.js && node --check demo-model.js && node --check assets/pose-data.js && node --check phone-coach.js && node --check phone-lab.js && node --check phone-knowledge.js"

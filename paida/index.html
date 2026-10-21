@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#17221e">
-  <meta name="description" content="拍搭，让朋友互拍更轻松。根据环境推荐姿势，用动画参考与轻发光轮廓辅助取景，拍完再给出构图建议。立即体验互动演示。">
-  <meta property="og:title" content="拍搭 PAIDA · 你负责自在，拍搭负责怎么拍">
-  <meta property="og:description" content="场景推荐、动画姿势、轻轮廓引导与拍后评估。试着拍一张，看看有什么不同。">
+  <meta name="description" content="拍档，你的 AI 手机摄影搭子。根据眼前环境生成多样拍法，用可以直接念出的姿势口令指导同伴，结合 AI 自动变焦、比例调整和拍后构图建议，让朋友互拍更轻松。">
+  <meta property="og:title" content="拍档 · 你的 AI 手机摄影搭子">
+  <meta property="og:description" content="对准现场，一键获取姿势口令与取景建议。了解拍档 Android v0.6 开发版，体验动画交互示例。">
   <meta property="og:type" content="website">
-  <title>拍搭 PAIDA · 让每一次互拍，都更合拍</title>
+  <title>拍档 · 你的 AI 手机摄影搭子</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="phone-lab.css">
+  <link rel="stylesheet" href="product.css?v=20261021">
   <link rel="preload" as="image" href="assets/scenes/campus.svg">
   <link rel="preload" as="image" href="assets/poses/wall_space.webp">
   <script defer src="assets/pose-data.js"></script>
@@ -37,24 +38,24 @@
   </defs></svg>
 
   <header class="site-header wrap">
-    <a href="#" class="brand" aria-label="拍搭，返回首页"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍搭<span class="brand-latin">PAIDA</span></span></a>
-    <nav aria-label="主导航"><a href="#how-it-works">产品故事</a><a href="#phone-lab">现场拍法</a><a href="#learning">手机课堂</a><a href="#about">关于拍搭</a></nav>
-    <a class="nav-cta" href="#experience">体验一下 <svg class="icon"><use href="#i-arrow"/></svg></a>
+    <a href="#" class="brand" aria-label="拍档，返回首页"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍档<span class="brand-latin">PAIDANG</span></span></a>
+    <nav aria-label="主导航"><a href="#ai-guide">AI 现场指导</a><a href="#camera-features">相机功能</a><a href="#phone-lab">拍法灵感</a><a href="#learning">手机课堂</a></nav>
+    <a class="nav-cta" href="#get-started">开始了解 <svg class="icon"><use href="#i-arrow"/></svg></a>
   </header>
 
   <main id="main">
     <section class="hero wrap" id="experience" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> YOUR EVERYDAY PHOTO PARTNER</div>
-        <h1 id="hero-title">你负责自在，<br>拍搭负责<br class="small-break"><em>怎么拍。</em></h1>
-        <p class="hero-description">看看光线，看看环境，再找到适合你的动作。<br>每一次互拍，都可以有新的拍法。</p>
-        <div class="hero-actions"><a class="button button-mint" href="#phone-lab">试试现场拍法 <svg class="icon"><use href="#i-arrow"/></svg></a><button class="text-link" id="start-demo">拍照流程演示 ↗</button></div>
-        <div class="hero-tags"><span><svg class="icon"><use href="#i-spark"/></svg>看场景推荐</span><span><svg class="icon"><use href="#i-frame"/></svg>跟轮廓取景</span><span><svg class="icon"><use href="#i-check"/></svg>拍完给建议</span></div>
-        <div class="hero-footnote"><span>为朋友互拍而设计</span><span>Android 开发版 · v0.4.0</span></div>
+        <div class="eyebrow"><span class="status-dot"></span> 你的 AI 手机摄影搭子</div>
+        <h1 id="hero-title">眼前这一刻，<br>AI 陪你<em>一起拍。</em></h1>
+        <p class="hero-description">对准现场，点一下「AI 现场指导」。<br>从怎么站、看哪里，到手机怎么取景，<br>把每一步变成你能直接说出口的话。</p>
+        <div class="hero-actions"><a class="button button-mint" href="#demo">体验 AI 指导示例 <svg class="icon"><use href="#i-arrow"/></svg></a><button class="text-link" id="start-demo">拍照流程演示 ↗</button></div>
+        <div class="hero-tags"><span><svg class="icon"><use href="#i-spark"/></svg>现场生成拍法</span><span><svg class="icon"><use href="#i-frame"/></svg>照着说就会摆</span><span><svg class="icon"><use href="#i-check"/></svg>AI 自动变焦</span></div>
+        <div class="hero-footnote"><span>为朋友互拍而设计</span><span>Android 8.0+ · v0.6.0 开发版</span></div>
       </div>
 
-      <div class="demo-shell" id="demo" aria-label="拍搭相机交互演示">
-        <div class="demo-caption"><span>TRY A LITTLE. FEEL THE DIFFERENCE.</span><span class="demo-pill">动画交互演示</span></div>
+      <div class="demo-shell" id="demo" aria-label="拍档相机交互演示">
+        <div class="demo-caption"><span>AI 现场指导 / 点亮一次互拍</span><span class="demo-pill">交互演示 · 示例建议</span></div>
         <div class="scene-tabs" role="group" aria-label="选择示例场景">
           <button data-scene="campus" aria-pressed="true"><span>01</span> 校园墙边</button>
           <button data-scene="park" aria-pressed="false"><span>02</span> 公园漫步</button>
@@ -68,8 +69,16 @@
             <div class="matching-state" id="matching-state" hidden><span class="scan-dot"></span> 正在匹配场景与姿势</div>
             <div class="viewfinder-hint" id="viewfinder-hint" hidden>轻松站定，肩膀放松</div>
             <div class="crop-guide" id="crop-guide" hidden><span>建议保留区域</span><i></i><i></i><i></i><i></i></div>
-            <span class="frame-label" id="frame-label">PAIDA / CAMPUS</span>
+            <span class="frame-label" id="frame-label">PAIDANG / CAMPUS</span>
             <div class="shutter-flash" id="shutter-flash" aria-hidden="true"></div>
+          </div>
+          <div class="ai-demo-panel" id="ai-demo-panel">
+            <button id="demo-ai" class="ai-main-button" aria-controls="spoken-preview" aria-expanded="false"><svg class="icon"><use href="#i-spark"/></svg><span id="demo-ai-label">AI 现场指导</span><small>试试示例</small></button>
+            <div class="spoken-preview" id="spoken-preview" hidden>
+              <span class="spoken-label">你可以直接这样告诉同伴 <b>示例</b></span>
+              <p id="spoken-command">“你向自己的左边转一点，肩膀放松，看着我。”</p>
+              <span class="photographer-label">拿手机的你</span><p id="photographer-command">保留完整头脚，给视线前方留一点空间。</p>
+            </div>
           </div>
           <div class="camera-controls" id="camera-controls">
             <button class="pose-preview" id="pose-preview" aria-label="查看推荐姿势参考" disabled><img id="pose-thumbnail" src="assets/poses/wall_space.webp" width="42" height="56" alt=""><span id="pose-title">等待推荐</span></button>
@@ -88,34 +97,47 @@
           <input type="range" id="distance" min="0" max="100" value="50" step="1" aria-describedby="range-help" disabled>
           <div class="range-endpoints" id="range-help"><span>远一点 · 留白更多</span><span>近一点 · 人物更大</span></div>
         </div>
-        <p class="demo-disclaimer">示例场景演示功能逻辑，不调用摄像头，也不上传照片。</p>
+        <p class="demo-disclaimer">网页为预设动画与示例口令，不调用摄像头或 DeepSeek。<br>真实 AI 指导在 Android 版配置云端服务后使用。</p>
         <p class="sr-only" id="live-status" role="status" aria-live="polite"></p>
         <noscript><p class="noscript">请启用 JavaScript 体验交互演示。你仍然可以浏览下方的产品介绍。</p></noscript>
       </div>
     </section>
+    <section class="ai-intro" id="ai-guide" aria-labelledby="ai-title"><div class="wrap ai-intro-layout">
+      <div><span class="eyebrow dark">核心体验 / AI 现场指导</span><h2 id="ai-title">不用先学会摄影，<br>先说好下一句话。</h2><p>拿手机的人看懂提示，被拍的人听懂口令。<br>拍档把场景、动作和取景，变成你们之间的一次自然配合。</p><a class="text-link" href="#demo">点亮上方的 AI 指导示例 <span aria-hidden="true">↗</span></a></div>
+      <div class="ai-conversation"><span class="conversation-context"><svg class="icon"><use href="#i-spark"/></svg> 公园 · 自然记录 <b>示例建议</b></span><span class="conversation-label">告诉同伴</span><blockquote>“你把重心放在右腿，<br>另一只脚往前一点。<br>抬头，看着我。”</blockquote><div class="camera-direction"><svg class="icon"><use href="#i-frame"/></svg><p><strong>拿手机的你</strong>先保留完整头脚，手机保持平稳，给人物周围留出空间。</p></div></div>
+      <div class="ai-principles"><article><span>因地制宜</span><p>围绕现场光线、背景和拍摄意图推荐。</p></article><article><span>拍法不止一组</span><p>动作、视线、手部与构图一起变化，动画参考只是灵感起点。</p></article><article><span>一键开始指导</span><p>AI 主按钮就在相机首页，随时重新生成另一组。</p></article></div>
+    </div></section>
 
-<section class="phone-lab wrap" id="phone-lab" aria-labelledby="lab-title">
-<span class="eyebrow">FIELD NOTES / 每一次，都有新拍法</span><h2 id="lab-title">先看眼前，<br>再决定怎么拍。</h2><p class="lab-intro">想在校园留下日常，还是在咖啡馆拍得安静一些？告诉拍搭眼前的条件，试着换几组。动作、视线和构图，会一起变化。</p>
-<form class="lab-form" id="lab-form" onsubmit="return false">
-<label>你在哪里<select id="lab-scene"><option value="campus">校园</option><option value="street">街道</option><option value="park">公园</option><option value="cafe">咖啡馆</option><option value="gallery">展馆</option></select></label>
-<label>现在的光线<select id="lab-light"><option value="soft">柔和 / 均匀</option><option value="hard">直射 / 强反差</option><option value="back">逆光</option><option value="low">弱光 / 夜晚</option></select></label>
-<label>想要的感觉<select id="lab-intent"><option>自然记录</option><option>环境叙事</option><option>安静氛围</option><option>活泼瞬间</option></select></label>
-<label>取景范围<select id="lab-framing"><option value="auto">交给拍搭建议</option><option value="full">全身</option><option value="half">半身</option><option value="environment">人与环境</option></select></label>
-<fieldset class="lab-options"><legend>确认现场可以使用</legend><label><input type="checkbox" data-prop="seat">稳固座椅</label><label><input type="checkbox" data-prop="table">桌面</label><label><input type="checkbox" data-prop="wall">可用墙面</label><label><input type="checkbox" data-prop="book">自己的书</label><label><input type="checkbox" data-prop="bag">自己的包</label><label><input type="checkbox" data-prop="cup">不烫手的杯子</label><label><input type="checkbox" data-prop="window">窗边柔光</label><label><input type="checkbox" data-prop="clear_path">可慢走的路线</label><label><input type="checkbox" id="lab-motion">愿意尝试轻动态</label></fieldset></form>
-<div class="lab-actions"><button class="button button-mint" id="lab-next">换一组拍法 ↻</button><p role="status" id="lab-status"></p></div><div class="lab-results" id="lab-results"></div><textarea id="lab-copy-fallback" aria-label="可复制的拍照口令" hidden></textarea>
-<p class="lab-footnote">这里按你填写的条件提供本地规则建议，不调用摄像头或 AI。Android 云端接口支持依据当前画面生成新的动作与构图，不限于固定动作编号；仍需配置模型服务并做真实调用验证。</p></section>
-<section class="learning-section" id="learning" aria-labelledby="learning-title"><div class="wrap"><span class="eyebrow dark">PHONE PHOTOGRAPHY / 把知识用在眼前</span><h2 id="learning-title">让手机，<br>更懂这一次拍摄。</h2><p class="lab-intro">从专业人像方法到手机互拍，提炼光线、距离、动作与沟通。资料保留作者和原始入口，并说明实际研读范围。</p><div class="source-tabs" role="group" aria-label="学习资料类型"><button data-source-type="video" aria-pressed="true">视频 · 6</button><button data-source-type="book" aria-pressed="false">书籍 · 3</button><button data-source-type="guide" aria-pressed="false">指南 · 6</button></div><div class="learning-sources" id="learning-sources"></div><h3 style="margin-top:45px;font-weight:500">20 条手机拍摄提醒</h3><div class="knowledge-rules" id="knowledge-rules"></div><p class="lab-intro" style="font-size:12px;margin-top:25px">已读公开图文被转译为原创规则与模型提示；未阅读全文的书籍、未完整观看的视频仅作为延伸学习入口。这是产品知识接入，不代表训练或微调了大模型。</p></div></section>
     <section class="story" id="how-it-works" aria-labelledby="story-title">
       <div class="wrap">
-        <div class="section-heading"><span class="eyebrow dark">01 / A LITTLE GUIDANCE</span><h2 id="story-title">不用一开始，<br>就知道怎么拍。</h2><p>让拍照回到相处本身。<br>需要的时候，拍搭才轻轻提醒。</p></div>
+        <div class="section-heading"><span class="eyebrow dark">01 / A LITTLE GUIDANCE</span><h2 id="story-title">不用一开始，<br>就知道怎么拍。</h2><p>让拍照回到相处本身。<br>需要的时候，拍档才轻轻提醒。</p></div>
         <div class="story-steps">
-          <article><div class="step-top"><span>01</span><svg class="icon"><use href="#i-spark"/></svg></div><h3>先看看，你在哪里。</h3><p>同伴稳定入镜后，结合开阔背景、墙边或桌椅线索，推荐适合当下的姿势。</p><span class="detail-tag">从环境开始推荐</span></article>
-          <article><div class="step-top"><span>02</span><svg class="icon"><use href="#i-frame"/></svg></div><h3>给方向，也留空间。</h3><p>动画参考帮你看懂动作。细发光轮廓辅助取景，想自由发挥时，一键隐藏。</p><span class="detail-tag">人物出现，轮廓才出现</span></article>
-          <article><div class="step-top"><span>03</span><svg class="icon"><use href="#i-check"/></svg></div><h3>拍完，再好一点。</h3><p>留白太多，看看裁剪参考；人物贴边，试试扩大取景。每次只给有用的建议。</p><span class="detail-tag">保留原片，由你决定</span></article>
+          <article><div class="step-top"><span>01</span><svg class="icon"><use href="#i-spark"/></svg></div><h3>对准现场，点一下。</h3><p>对准同伴和环境，点击相机首页的「AI 现场指导」。确认这一帧后，获取适合现场的拍法。</p><span class="detail-tag">AI 入口就在相机首页</span></article>
+          <article><div class="step-top"><span>02</span><svg class="icon"><use href="#i-frame"/></svg></div><h3>照着说，一起调整。</h3><p>读出 AI 给你的简短口令，让同伴调整动作；你再按单独的取景提示调整手机，确认后按快门。</p><span class="detail-tag">动作口令与取景提示分开</span></article>
+          <article><div class="step-top"><span>03</span><svg class="icon"><use href="#i-check"/></svg></div><h3>拍完，再好一点。</h3><p>照片拍下后，在本机查看人物占比与边缘留白建议。原片保留，下一张可以试着再调整。</p><span class="detail-tag">保留原片，由你决定</span></article>
         </div>
       </div>
     </section>
 
+    <section class="camera-features wrap" id="camera-features" aria-labelledby="camera-features-title">
+      <div class="feature-heading"><span class="eyebrow">让好想法，落到取景里</span><h2 id="camera-features-title">姿势之外，<br>画面也一起照顾。</h2><p>从按下快门前，到拍好这一张后。</p></div>
+      <div class="feature-grid">
+        <article><span class="feature-number">01 / AUTO ZOOM</span><div class="zoom-illustration" aria-hidden="true"><span>1×</span><i></i><strong>AI</strong><i></i><span>取景调整</span></div><h3>AI 帮你调整变焦</h3><p>云端建议包含有效变焦方案时，在拍摄前调整画面大小。你可以随时手动接管，或关闭自动变焦。</p><small>可用倍率取决于手机；数码变焦可能损失细节。</small></article>
+        <article><span class="feature-number">02 / YOUR FRAME</span><div class="ratio-illustration" aria-hidden="true"><span>3:4</span><span>1:1</span><span>9:16</span></div><h3>选比例，也选远近</h3><p>全身、方形日常、竖屏分享。切换 3:4、1:1、9:16，再用倍率按钮、滑杆或双指缩放调整取景。</p><small>比例与手动变焦偏好会保存在本机。</small></article>
+        <article><span class="feature-number">03 / AFTER THE SHOT</span><div class="review-illustration" aria-hidden="true"><svg class="icon"><use href="#i-frame"/></svg><span>人物占比 · 边缘留白</span></div><h3>拍完，给下一张灵感</h3><p>在本机分析照片里的构图，提供留白、人物大小与裁剪参考。你决定是否调整，原片始终保留。</p><small>裁剪框是参考，不会自动改写照片。</small></article>
+      </div>
+    </section>
+<section class="phone-lab wrap" id="phone-lab" aria-labelledby="lab-title">
+<span class="eyebrow">FIELD NOTES / 每一次，都有新拍法</span><h2 id="lab-title">先看眼前，<br>再决定怎么拍。</h2><p class="lab-intro">想在校园留下日常，还是在咖啡馆拍得安静一些？选择眼前的条件，试着换几组。动作、视线和构图，会一起变化。这是本地规则互动，可先用来找灵感。</p>
+<form class="lab-form" id="lab-form" onsubmit="return false">
+<label>你在哪里<select id="lab-scene"><option value="campus">校园</option><option value="street">街道</option><option value="park">公园</option><option value="cafe">咖啡馆</option><option value="gallery">展馆</option></select></label>
+<label>现在的光线<select id="lab-light"><option value="soft">柔和 / 均匀</option><option value="hard">直射 / 强反差</option><option value="back">逆光</option><option value="low">弱光 / 夜晚</option></select></label>
+<label>想要的感觉<select id="lab-intent"><option>自然记录</option><option>环境叙事</option><option>安静氛围</option><option>活泼瞬间</option></select></label>
+<label>取景范围<select id="lab-framing"><option value="auto">交给拍档建议</option><option value="full">全身</option><option value="half">半身</option><option value="environment">人与环境</option></select></label>
+<fieldset class="lab-options"><legend>确认现场可以使用</legend><label><input type="checkbox" data-prop="seat">稳固座椅</label><label><input type="checkbox" data-prop="table">桌面</label><label><input type="checkbox" data-prop="wall">可用墙面</label><label><input type="checkbox" data-prop="book">自己的书</label><label><input type="checkbox" data-prop="bag">自己的包</label><label><input type="checkbox" data-prop="cup">不烫手的杯子</label><label><input type="checkbox" data-prop="window">窗边柔光</label><label><input type="checkbox" data-prop="clear_path">可慢走的路线</label><label><input type="checkbox" id="lab-motion">愿意尝试轻动态</label></fieldset></form>
+<div class="lab-actions"><button class="button button-mint" id="lab-next">换一组拍法 ↻</button><p role="status" id="lab-status"></p></div><div class="lab-results" id="lab-results"></div><textarea id="lab-copy-fallback" aria-label="可复制的拍照口令" hidden></textarea>
+<p class="lab-footnote">这里按你填写的条件提供本地规则建议，不调用摄像头或 AI。Android 云端模式可把确认后的现场画面交给模型，生成新的动作与构图；需先配置电脑端代理与官方模型 API。</p></section>
+<section class="learning-section" id="learning" aria-labelledby="learning-title"><div class="wrap"><span class="eyebrow dark">PHONE PHOTOGRAPHY / 把知识用在眼前</span><h2 id="learning-title">让手机，<br>更懂这一次拍摄。</h2><p class="lab-intro">从专业人像方法到手机互拍，提炼光线、距离、动作与沟通。资料保留作者和原始入口，并说明实际研读范围。</p><div class="source-tabs" role="group" aria-label="学习资料类型"><button data-source-type="video" aria-pressed="true">视频 · 6</button><button data-source-type="book" aria-pressed="false">书籍 · 3</button><button data-source-type="guide" aria-pressed="false">指南 · 6</button></div><div class="learning-sources" id="learning-sources"></div><h3 style="margin-top:45px;font-weight:500">20 条手机拍摄提醒</h3><div class="knowledge-rules" id="knowledge-rules"></div><p class="lab-intro" style="font-size:12px;margin-top:25px">已读公开图文被转译为原创规则与模型提示；未阅读全文的书籍、未完整观看的视频仅作为延伸学习入口。这是产品知识接入，不代表训练或微调了大模型。</p></div></section>
     <section class="pose-section wrap" id="poses" aria-labelledby="pose-section-title">
       <div class="pose-section-copy"><span class="eyebrow">02 / LESS GUESSING, MORE FEELING</span><h2 id="pose-section-title">动作不用猜，<br>一眼就明白。</h2><p>自然站定、侧身回望，或只是坐着看风景。<br>动画动作只是灵感起点；现场推荐可以不断变化。</p><button class="text-link" id="open-gallery">看看动作示例 <span aria-hidden="true">↗</span></button><span class="pose-caption">全动画参考 · 轻松找到感觉</span></div>
       <div class="pose-editorial" aria-label="三种动画姿势参考">
@@ -127,15 +149,27 @@
 
     <section class="review-story wrap" aria-labelledby="review-story-title">
       <div class="review-visual" aria-hidden="true"><div class="mini-photo"><img src="assets/poses/open_front.webp" width="576" height="768" loading="lazy" alt=""><div class="mini-crop"><span>少一点留白，多一点主角。</span></div><span class="mini-photo-label">COMPOSITION / 03</span></div><span class="review-stamp"><svg class="icon"><use href="#i-check"/></svg> 原片始终保留</span></div>
-      <div class="review-story-copy"><span class="eyebrow">03 / ONE SHOT, ONE SMALL IMPROVEMENT</span><h2 id="review-story-title">按下快门，<br>还有下一点灵感。</h2><p>没有一个生硬的“颜值分数”。<br>拍搭关注画面：人物大小、边缘留白与光线，<br>把“哪里不太对”变成“可以试试这样”。</p><button class="text-link" id="try-review">试试拍后评估 <span aria-hidden="true">↗</span></button></div>
+      <div class="review-story-copy"><span class="eyebrow">03 / ONE SHOT, ONE SMALL IMPROVEMENT</span><h2 id="review-story-title">按下快门，<br>还有下一点灵感。</h2><p>没有一个生硬的“颜值分数”。<br>拍档关注画面：人物大小与边缘留白，<br>把“哪里不太对”变成“可以试试这样”。</p><button class="text-link" id="try-review">试试拍后评估 <span aria-hidden="true">↗</span></button></div>
     </section>
 
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-layout"><div><span class="eyebrow dark">MADE FOR REAL MOMENTS</span><h2 id="about-title">把注意力，<br>留给眼前的人。</h2><a class="button button-dark" href="#experience">再拍一张 <svg class="icon"><use href="#i-arrow"/></svg></a></div><div class="about-notes"><div><svg class="icon"><use href="#i-shield"/></svg><div><h3>日常拍摄，在本机完成。</h3><p>Android 版的基础姿势推荐与拍后评估在本机处理，不自动上传照片。</p></div></div><div><svg class="icon"><use href="#i-person"/></svg><div><h3>从单人互拍开始。</h3><p>当前为 Android 8.0+ 开发原型 v0.4.0，面向单人人像。真实识别效果会受到光线、遮挡与设备影响。</p></div></div><details><summary>网页演示与 Android 版有什么区别？</summary><p>网页使用动画人物与预设场景，依据你调整的取景比例展示建议，不进行真实 AI 识别。Android 版通过相机观察画面，并在拍照后分析实际照片。裁剪框仅供参考；应用不会自动裁图，也不测量后退几米。</p></details></div></div></section>
+    <section class="get-started wrap" id="get-started" aria-labelledby="start-title">
+      <div><span class="eyebrow">ANDROID / v0.6.0 开发版</span><h2 id="start-title">把拍档，<br>带到下一次互拍里。</h2><p>面向 Android 8.0 及以上手机，从后置相机的单人人像开始。</p><a class="button button-mint" href="#demo">先体验网页示例 <svg class="icon"><use href="#i-arrow"/></svg></a><span class="release-note">当前测试包通过项目内测分发，公开下载入口尚未开放。</span></div>
+      <ol class="setup-steps"><li><span>01</span><div><h3>安装安卓测试版</h3><p>打开相机即可尝试基础取景、手动姿势参考和拍后构图建议。</p></div></li><li><span>02</span><div><h3>连接你的 AI 服务</h3><p>在 Windows 配套工具中配置官方 API 密钥，再连接手机。默认支持 DeepSeek，也可选择千问或豆包。</p></div></li><li><span>03</span><div><h3>点一下「AI 现场指导」</h3><p>确认现场画面，获取新拍法。读出口令，调整取景，再由你按下快门。</p></div></li></ol>
+    </section>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="wrap about-layout"><div><span class="eyebrow dark">安心互拍，明白使用</span><h2 id="about-title">把注意力，<br>留给眼前的人。</h2><p class="about-lead">照片和建议怎么保存，什么时候使用云端，<br>在开始前就说清楚。</p></div><div class="about-notes">
+      <details open><summary>AI 建议，默认存在哪里？</summary><p>成功生成的云端建议会缓存在手机本地，可从「照片 → 查看已存建议」回看，也可导出 CSV。照片保存在系统相册；当前的本地拍后评估结果不会在重启后恢复。</p></details>
+      <details><summary>什么情况下会上传照片？</summary><p>基础推荐和拍后构图评估在本机处理。使用云端 AI 时，你确认的单帧压缩图片会经电脑端代理发送给所选模型服务。应用不会持续上传视频；代理不把分析图片写入磁盘。</p></details>
+      <details><summary>DeepSeek 要怎样连接？</summary><p>当前开发版通过 Windows 配套工具连接官方 API。密钥保留在电脑配置中，手机使用访问令牌。需要自行配置有效密钥，模型调用费用按服务商规则计算。</p></details>
+      <details><summary>AI 会自动变焦，也会自动拍照吗？</summary><p>开启自动变焦后，应用会在有效方案与设备支持范围内调整拍摄前的变焦倍率。你仍需确认画面并按下快门。它不代表光学镜头自动切换；倍率范围因手机而异。</p></details>
+      <details><summary>网页演示和安卓实拍有什么区别？</summary><p>网页使用预设动画、示例口令和本地规则，不访问摄像头、不请求真实模型。Android 版才使用相机画面；云端功能须配置服务。当前为开发原型，真实模型调用与各机型变焦效果仍需实机验证。</p></details>
+      <details><summary>只有 12 个姿势可以拍吗？</summary><p>动画图库是手动参考示例。云端 AI 可以围绕当前环境生成新动作、视线、手部安排和构图，并提供多组拍法；推荐数量不受动画模板限制。</p></details>
+    </div></div></section>
   </main>
 
-  <footer class="wrap site-footer"><a class="brand" href="#"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍搭<span class="brand-latin">PAIDA</span></span></a><span>让每一次互拍，都更合拍。</span><span class="footer-meta">PRODUCT EXPLORATION / 2026</span></footer>
+  <footer class="wrap site-footer"><a class="brand" href="#"><span class="brand-icon"><svg><use href="#i-frame"/></svg></span><span>拍档<span class="brand-latin">PAIDANG</span></span></a><span>让每一次互拍，都更合拍。</span><span class="footer-meta">ANDROID v0.6.0 / 2026</span></footer>
 
   <dialog class="pose-dialog" id="pose-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><div><span class="eyebrow dark">A LITTLE INSPIRATION</span><h2 id="dialog-title">找到自然的自己。</h2></div><button class="icon-button" id="close-dialog" aria-label="关闭姿势参考"><svg class="icon"><use href="#i-close"/></svg></button></div><p class="dialog-intro" id="dialog-intro">这些是动画动作示例，不是 AI 推荐的数量上限；按现场条件选择舒适动作。</p><div class="pose-grid" id="pose-grid"></div><button class="button button-dark dialog-done" id="dialog-done">看懂了，去拍照 <svg class="icon"><use href="#i-arrow"/></svg></button></dialog>
 </body>
 </html>
+
 

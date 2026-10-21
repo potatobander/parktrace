@@ -13,6 +13,18 @@
   let matchGeneration = 0;
   let imageError = false;
   let dialogTrigger = null;
+  let aiUsed = false;
+  const spokenExamples = {
+    wall_space: ['你离墙面留一点空隙，双手自然放下，肩膀放松，看着我。', '保留完整头脚，给人物周围留一点空间。'],
+    wall_half: ['你向自己的左边转一点，肩膀放松，脸转回来，看着我。', '以半身为重点，给头顶和视线前方留白。'],
+    wall_lean: ['确认墙面稳固后，你用一侧肩膀轻轻靠住，手自然放着，看向我这边。', '保持手机平稳，保留肩膀和手部动作。'],
+    open_front: ['你先自然站好，肩膀放松，双手垂下，抬头看着我。', '保留完整头脚，用周围的绿意交代环境。'],
+    open_turn: ['你侧过身，脚先站稳，再慢慢回头，看着我。', '给转身的方向留出空间，避免动作贴边。'],
+    open_weight: ['你把重心放在右腿，另一只脚往前一点，肩膀放松，看着我。', '让人物大小适中，保留完整的脚部动作。'],
+    table_arm: ['你先坐稳，前臂轻轻放在桌上，肩膀放松，看着我。', '取上半身，保留前臂和桌面的一点环境。'],
+    table_half: ['你坐稳后向自己的左边转一点，一只手自然放在桌边，再看向我。', '给肩膀和手部留出空间，背景尽量简洁。'],
+    table_look: ['你保持坐稳，脸轻轻转向窗边的柔光，眼神放松，先停一下。', '注意脸部受光，不让明亮窗户占据过多画面。']
+  };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const activePose = () => poses.get(model.scenes[state.scene].poses[state.poseIndex]);
   const assetUrl = src => (window.PAIDA_ASSETS || {})[src] || src;
@@ -81,6 +93,19 @@
     const matching = state.phase === 'matching';
     const pose = activePose();
     const scene = model.scenes[state.scene];
+    $('ai-demo-panel').hidden = reviewing;
+    $('spoken-preview').hidden = !ready;
+    $('demo-ai').setAttribute('aria-expanded', String(ready));
+    $('demo-ai').setAttribute('aria-busy', String(matching));
+    $('demo-ai').disabled = matching || imageError || !ctx;
+    $('demo-ai-label').textContent = matching ? '正在切换示例…' : aiUsed && state.present ? '换一组 AI 拍法' : 'AI 现场指导';
+    if (ready) {
+      const example = spokenExamples[pose.id];
+      if (example) {
+        $('spoken-command').textContent = '“' + example[0] + '”';
+        $('photographer-command').textContent = example[1];
+      }
+    }
     document.querySelectorAll('[data-scene]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.scene === state.scene)); });
     $('camera-controls').hidden = reviewing;
     $('photo-review').hidden = !reviewing;
@@ -108,7 +133,7 @@
     $('camera-status').append(document.createTextNode(imageError ? '场景载入失败，请刷新' : reviewing ? '这一张 · 原片视图' : matching ? '正在匹配' : ready ? scene.reason : '等待人物入镜'));
     const tips = { wall_space: '和背景留一点距离，自然站定', wall_half: '侧身一点，肩膀放松', wall_lean: '确认墙面安全后，轻靠一侧肩膀', open_front: '轻松站定，手臂自然垂下', open_turn: '身体侧一点，轻轻看向镜头', open_weight: '重心放一侧，另一只脚放松', table_arm: '前臂轻放，肩膀自然放松', table_half: '坐稳后，一只手自然放在桌边', table_look: '转向侧方光线，不直视强光' };
     $('viewfinder-hint').textContent = tips[pose.id] || pose.action;
-    $('frame-label').textContent = 'PAIDA / ' + scene.label + (reviewing ? ' / SHOT' : '');
+    $('frame-label').textContent = 'PAIDANG / ' + scene.label + (reviewing ? ' / SHOT' : '');
     canvas.setAttribute('aria-label', reviewing ? '刚拍摄的动画示例照片。' + state.shot.assessment.title : '示例场景：' + scene.name + (state.present ? '。动画人物：' + pose.name + '；' + model.distanceLabel(state.distance) + (ready && state.outline ? '，显示细发光轮廓。' : '。') : '，尚未有人入镜，无人物轮廓。'));
     if (reviewing) {
       const result = state.shot.assessment;
@@ -210,6 +235,14 @@
   $('open-gallery').addEventListener('click', () => openGallery());
   $('pose-preview').addEventListener('click', () => openGallery(true));
   $('start-demo').addEventListener('click', startDemo);
+  $('demo-ai').addEventListener('click', () => {
+    if (aiUsed && state.present) state.poseIndex = (state.poseIndex + 1) % model.scenes[state.scene].poses.length;
+    aiUsed = true;
+    state.present = true;
+    state.shot = null;
+    beginMatching();
+    announce('正在切换预设拍法示例。网页不调用真实 AI；完成后可以读出口令，再按快门。');
+  });
   $('enter-person').addEventListener('click', togglePerson);
   $('toggle-person').addEventListener('click', togglePerson);
   $('next-pose').addEventListener('click', () => { state.poseIndex = (state.poseIndex + 1) % model.scenes[state.scene].poses.length; beginMatching(); });
@@ -232,4 +265,5 @@
   loadImage('assets/poses/wall_space.webp').catch(() => {});
   updateUI();
 })();
+
 
