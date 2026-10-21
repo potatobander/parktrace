@@ -1,0 +1,26 @@
+/* Paida desktop refresh */
+@media(min-width:761px){
+.wrap{width:min(1440px,calc(100% - 100px))}
+.site-header{position:sticky;top:0;z-index:40;background:rgba(23,34,30,.96);backdrop-filter:blur(16px);height:86px}
+.site-header nav{font-size:15px}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:clamp(40px,5vw,90px);padding-block:90px;min-height:calc(100vh - 86px)}
+.hero h1{font-size:clamp(54px,5vw,80px);line-height:1.2;white-space:normal}
+.hero-description{font-size:20px;line-height:1.85}
+.hero .eyebrow{font-size:14px}
+.hero-actions .button{font-size:16px;padding:18px 25px}
+.hero-actions .text-link{font-size:15px}
+.hero-tags{font-size:13px;flex-wrap:wrap}
+.demo-shell{width:100%;max-width:570px;justify-self:center}
+.section-heading h2,.pose-section h2,.review-story h2,.about-section h2,.feature-heading h2,.ai-intro h2,.get-started h2{font-size:clamp(40px,3.6vw,58px)}
+.story-steps p,.pose-section p,.review-story p,.get-started>div>p,.setup-steps p,.source-card p,.feature-grid p,.lab-intro{font-size:16px;line-height:1.85}
+.story-steps h3,.feature-grid h3,.setup-steps h3{font-size:22px}
+.about-notes summary,.about-notes details p{font-size:15px}
+}
+@media(min-width:761px) and (max-width:1050px){.wrap{width:calc(100% - 60px)}.hero{gap:30px}.hero h1{font-size:46px}.hero-description{font-size:17px}}
+@media(max-width:760px){.hero-description{font-size:15px}.story-steps p,.source-card p,.setup-steps p{font-size:15px}}
+.site-header nav a,.button,.scene-tabs button,.source-tabs button,.feature-grid article,.lab-card{transition:transform .25s,background .25s,color .25s,box-shadow .25s}
+.site-header nav a:hover{color:var(--mint)}
+.button:hover,.scene-tabs button:hover,.source-tabs button:hover{transform:translateY(-3px)}
+.feature-grid article:hover,.lab-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px #0002}
+section[id]{scroll-margin-top:95px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
