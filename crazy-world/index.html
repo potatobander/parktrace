@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eff3ef">
+  <meta name="description" content="整个世界只剩海洋。从一个小木筏开始，打捞资源、钓鱼、净化海水、制作衣服、招募伙伴，建立属于你的海上家园。">
+  <title>疯狂世界 · 海上生存</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%233c7772'/%3E%3Cpath d='M12 40 32 28 52 40 32 52Z' fill='%23dfa96c'/%3E%3Cpath d='M32 12v27M33 14l15 14H33' stroke='%23fff4da' fill='%23fff4da' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+ <symbol id="i-wood" viewBox="0 0 24 24"><path d="m5 17 10-12 5 4L10 21Z"/><path d="m6 12 8-10 5 4M9 16l6-7M13 18l5-6"/></symbol>
+ <symbol id="i-plastic" viewBox="0 0 24 24"><path d="M10 3h5v4l2 3v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-9l3-3Z"/><path d="M8 12h8M8 16h8M10 6h5"/></symbol>
+ <symbol id="i-metal" viewBox="0 0 24 24"><path d="m5 7 6-4 9 3-1 12-6 3-9-4Z"/><path d="m5 7 9 3 6-4M14 10l-1 11M8 13l2 1"/></symbol>
+ <symbol id="i-cloth" viewBox="0 0 24 24"><path d="m8 3 4 2 4-2 6 5-4 5-2-2v10H8V11l-2 2-4-5Z"/><path d="M9 4a3 3 0 0 0 6 0"/></symbol>
+ <symbol id="i-fish" viewBox="0 0 24 24"><path d="M5 12c4-8 11-8 15 0-4 8-11 8-15 0Zm0 0-4-4v8Z"/><path d="M15 10h.01M11 6l-1-3 6 2M11 18l-1 3 6-2"/></symbol>
+ <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2S4 11 4 15a8 8 0 0 0 16 0c0-4-8-13-8-13Z"/><path d="M8 15c0 2 1 3 3 4"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-4 4 1 10 8 16C19 15 24 9 20 5Z"/></symbol>
+ <symbol id="i-food" viewBox="0 0 24 24"><path d="M6 2v8m-3-8v6a3 3 0 0 0 6 0V2M6 11v11M18 2c-5 4-5 11 0 11V2Zm0 11v9"/></symbol>
+ <symbol id="i-warm" viewBox="0 0 24 24"><path d="M9 14V5a3 3 0 0 1 6 0v9a5 5 0 1 1-6 0Z"/><path d="M12 10v9M18 5h3M18 9h3"/></symbol>
+ <symbol id="i-hook" viewBox="0 0 24 24"><path d="M6 3h10v13a5 5 0 0 1-10 0v-3l4 3M13 3V1"/></symbol>
+ <symbol id="i-home" viewBox="0 0 24 24"><path d="m2 11 10-9 10 9M5 9v13h14V9M9 22v-8h6v8"/></symbol>
+ <symbol id="i-raft" viewBox="0 0 24 24"><path d="m2 16 10-6 10 6-10 6ZM12 2v12M13 3l7 7h-7M6 14l10 6M10 12l10 6"/></symbol>
+ <symbol id="i-tool" viewBox="0 0 24 24"><path d="m14 5 5-3-1 6-4 2-9 12-3-3 10-11-1-4 3-2Z"/></symbol>
+ <symbol id="i-crew" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 22v-4a7 7 0 0 1 14 0v4M17 3a4 4 0 0 1 0 8M18 14a6 6 0 0 1 4 5v3"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
+ <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 14A9 9 0 0 1 10 3 10 10 0 1 0 21 14Z"/></symbol>
+ <symbol id="i-rain" viewBox="0 0 24 24"><path d="M5 15a5 5 0 0 1 0-10 7 7 0 0 1 13-1 6 6 0 0 1 1 12M7 18l-1 3m6-3-1 3m6-3-1 3"/></symbol>
+ <symbol id="i-save" viewBox="0 0 24 24"><path d="M4 2h13l4 4v16H3V2ZM7 2v7h10V2M7 22v-9h10v9"/></symbol>
+ <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3v16H7ZM15 4h3v16h-3Z"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 3 15 9-15 9Z"/></symbol>
+ <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 8a3 3 0 1 1 5 3c-2 1-2 2-2 3M12 18h.01"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L21 5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-volume" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3ZM16 8a6 6 0 0 1 0 8M19 4a11 11 0 0 1 0 16"/></symbol>
+ <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V2c4-2 9 4 15 0v12c-6 4-11-2-15 0"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+ <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 7-3 7-6 3 3-7Z"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+</defs></svg>
+<div class="app-shell">
+ <header class="topbar">
+  <a class="brand" href="./" aria-label="疯狂世界首页"><span class="brand-emblem"><svg><use href="#i-raft"/></svg></span><span><strong>疯狂世界<span class="brand-dot">.</span></strong><small>THE WORLD IS YOUR RAFT</small></span></a>
+  <div class="world-status"><span class="live-dot"></span><span id="dayLabel">第 1 天</span><i></i><span id="weatherLabel">晴朗海面</span><span id="clockLabel">08:00</span></div>
+  <div class="top-actions"><span id="saveLabel" class="save-label">进度自动保存</span><button class="icon-button" id="saveBtn" title="保存进度" aria-label="保存进度"><svg><use href="#i-save"/></svg></button><button class="icon-button" id="soundBtn" title="开启音效" aria-label="开启音效" aria-pressed="false"><svg><use href="#i-volume"/></svg><span class="sound-off"></span></button><button class="icon-button" id="pauseBtn" title="暂停" aria-label="暂停"><svg><use href="#i-pause"/></svg></button><button class="icon-button" id="helpBtn" title="生存指南" aria-label="生存指南"><svg><use href="#i-help"/></svg></button></div>
+ </header>
+ <main>
+  <div class="page-heading"><div><p class="eyebrow">OCEAN JOURNAL / 漂流手记</p><h1>没有陆地，也能有家。</h1><p class="subheading">从一块木筏开始，把漂来的日子，过成生活。</p></div><div class="coordinates"><svg><use href="#i-compass"/></svg><span>无名海域<small>∞ N · ∞ E</small></span></div></div>
+  <section class="resource-bar" aria-label="物资背包" id="resources"></section>
+  <div class="game-layout">
+   <div class="main-column">
+    <section class="ocean-panel" aria-label="海上木筏游戏区域">
+     <canvas id="ocean" aria-label="点击漂浮的木材、塑料、布料和物资箱进行打捞" tabindex="0"></canvas>
+     <div class="scene-top"><span class="scene-location"><span class="live-dot"></span> 正在漂流 <span id="raftLevel">初始木筏</span></span><span class="weather-pill" id="sceneWeather"><svg><use href="#i-sun"/></svg> 26°C · 微风</span></div>
+     <div class="compass" aria-hidden="true"><span>N</span><svg><use href="#i-compass"/></svg></div>
+     <div id="floatText" class="float-text" aria-live="polite"></div>
+     <div id="fishingOverlay" class="fishing-overlay" hidden><div class="fishing-heading"><span id="fishingStatus">等待鱼儿咬钩…</span><button id="cancelFishing" aria-label="取消钓鱼">×</button></div><div class="fishing-track"><span class="fishing-zone" id="fishingZone"></span><span class="fishing-needle" id="fishingNeedle"></span></div><p id="fishingHint">看准绿色区域，点击「收竿」</p><button class="primary-button" id="reelBtn" disabled>等待咬钩</button></div>
+     <div class="scene-bottom"><span><span class="mouse-icon"></span><span id="sceneHint">点击海上的漂浮物，抛出你的钩子</span></span><span class="zoom-label" id="sceneCount">1 位漂流者 · 4 格木筏</span></div>
+    </section>
+    <section class="vitals-panel" aria-label="生存状态" id="vitals"></section>
+    <section class="action-bar" aria-label="快捷操作">
+     <button id="salvageBtn" class="action-button primary-action"><span class="action-icon"><svg><use href="#i-hook"/></svg></span><span><strong>抛钩打捞</strong><small>收集附近漂浮物</small></span><kbd>空格</kbd></button>
+     <button id="fishBtn" class="action-button"><span class="action-icon"><svg><use href="#i-fish"/></svg></span><span><strong>出海钓鱼</strong><small id="fishHint">先制作一根钓竿</small></span><kbd>F</kbd></button>
+     <button id="eatBtn" class="action-button"><span class="action-icon"><svg><use href="#i-food"/></svg></span><span><strong>吃点东西</strong><small>消耗 1 份鱼 · 饱食 +30</small></span></button>
+     <button id="drinkBtn" class="action-button"><span class="action-icon"><svg><use href="#i-water"/></svg></span><span><strong>喝口淡水</strong><small>消耗 1 份水 · 水分 +35</small></span></button>
+    </section>
+    <section class="journal"><div class="journal-title"><svg><use href="#i-flag"/></svg><strong>漂流日志</strong><span>每一天，都算数。</span></div><div id="logList" aria-live="polite"></div></section>
+   </div>
+   <aside class="workshop">
+    <div class="workshop-heading"><div><p class="eyebrow">MAKE A LITTLE HOME</p><h2>海上工坊</h2></div><span class="level-badge" id="homeBadge">Lv. 1</span></div>
+    <div class="workshop-tabs" role="tablist"><button id="tab-build" role="tab" aria-selected="true" aria-controls="workshopContent" data-tab="build"><svg><use href="#i-home"/></svg>建造</button><button id="tab-tools" role="tab" aria-selected="false" aria-controls="workshopContent" data-tab="tools"><svg><use href="#i-tool"/></svg>工具</button><button id="tab-crew" role="tab" aria-selected="false" aria-controls="workshopContent" data-tab="crew"><svg><use href="#i-crew"/></svg>船员<span id="crewTabCount"></span></button></div>
+    <div class="workshop-content" id="workshopContent" role="tabpanel" aria-labelledby="tab-build"></div>
+    <div class="goal-card"><div class="goal-heading"><span class="goal-icon"><svg><use href="#i-flag"/></svg></span><div><small>下一步，小小的目标</small><strong id="goalTitle">收集第一批漂流物</strong></div><span id="goalFraction">0/8</span></div><div class="goal-track"><span id="goalProgress"></span></div><p id="goalDesc">点击海面上的物资，把它们打捞上来。</p></div>
+   </aside>
+  </div>
+  <footer><span>一片海，一块木筏，无限可能。</span><span>疯狂世界 <b>·</b> OCEAN SURVIVAL <span class="version">v1.0</span></span></footer>
+ </main>
+</div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="modalBackdrop" class="modal-backdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></section></div>
+<script src="game-core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
