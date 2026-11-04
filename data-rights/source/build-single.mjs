@@ -1,0 +1,12 @@
+import {readFileSync,writeFileSync,readdirSync} from 'node:fs';
+import {join} from 'node:path';
+let html=readFileSync('dist/index.html','utf8');
+let assets=readdirSync('dist/assets');
+const js=assets.filter(p=>p.endsWith('.js'));
+const css=assets.filter(p=>p.endsWith('.css'));
+if(js.length!==1||css.length!==1)throw new Error('Expected one JavaScript and one CSS bundle');
+html=html.replace(/<script type="module" crossorigin src="[^"]+"><\/script>/,()=>'<script type="module">'+readFileSync(join('dist/assets',js[0]),'utf8').replaceAll('</script','<\\/script')+'</script>');
+html=html.replace(/<link rel="stylesheet" crossorigin href="[^"]+">/,()=>'<style>'+readFileSync(join('dist/assets',css[0]),'utf8')+'</style>');
+if(html.includes('src="./assets/')||html.includes('href="./assets/'))throw new Error('Asset inlining failed');
+writeFileSync('../index.html',html);
+console.log('Generated ../index.html');

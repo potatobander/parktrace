@@ -1,0 +1,1 @@
+{"name":"data-rights-github-pages","version":"1.0.0","private":true,"type":"module","scripts":{"build":"vite build && node build-single.mjs"},"dependencies":{"lucide-react":"^1.31.0","react":"19.2.6","react-dom":"19.2.6"},"devDependencies":{"@vitejs/plugin-react":"6.0.2","typescript":"5.9.3","vite":"8.0.13"}}
