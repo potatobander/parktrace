@@ -1,0 +1,7 @@
+.env
+.env.*
+config.local.json
+*.pem
+*.jks
+*.keystore
+node_modules/

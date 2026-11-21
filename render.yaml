@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: paidang
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm test
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: PAIDA_DAILY_LIMIT
+        value: "100"

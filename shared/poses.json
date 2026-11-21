@@ -1,0 +1,14 @@
+[
+  {"id":"open_front","name":"自然站定","scene":"开阔背景","framing":"full","requires":[],"action":"请对方轻松站定，手臂自然垂下，目光看向镜头。","targetX":0.5,"kind":"stand"},
+  {"id":"open_turn","name":"侧身回望","scene":"开阔背景","framing":"full","requires":[],"action":"请对方身体稍微转向一侧，再轻轻看向镜头。","targetX":0.62,"kind":"turn"},
+  {"id":"open_weight","name":"重心放松","scene":"开阔背景","framing":"full","requires":[],"action":"请对方把重心放在舒适的一侧，另一只脚自然放松。","targetX":0.38,"kind":"stand"},
+  {"id":"wall_half","name":"墙边半身","scene":"墙面建筑","framing":"half","requires":[],"action":"请对方侧身一点，靠镜头的手臂轻轻离开身体。","targetX":0.5,"kind":"turn"},
+  {"id":"wall_space","name":"留出背景","scene":"墙面建筑","framing":"full","requires":[],"action":"请对方在安全范围内与背景留开一点距离，自然站定。","targetX":0.38,"kind":"stand"},
+  {"id":"wall_lean","name":"轻松倚靠","scene":"墙面建筑","framing":"half","requires":["可安全倚靠的墙面"],"action":"确认墙面稳固、允许倚靠后，请对方轻靠一侧肩膀。","targetX":0.62,"kind":"lean"},
+  {"id":"seat_front","name":"坐姿正面","scene":"椅子长凳","framing":"full","requires":["可用且稳固的座椅"],"action":"请对方坐稳后，双手自然放在腿上，肩膀放松。","targetX":0.5,"kind":"sit"},
+  {"id":"seat_side","name":"侧坐半身","scene":"椅子长凳","framing":"half","requires":["可用且稳固的座椅"],"action":"请对方坐稳，身体轻轻转向一侧，转头看向镜头。","targetX":0.62,"kind":"sit"},
+  {"id":"seat_turn","name":"坐着看风景","scene":"椅子长凳","framing":"half","requires":["可用且稳固的座椅"],"action":"请对方保持舒适坐姿，把目光转向镜头旁边。","targetX":0.38,"kind":"sit"},
+  {"id":"table_half","name":"桌边半身","scene":"桌边室内","framing":"half","requires":["允许使用的稳固桌椅"],"action":"请对方坐稳，一只手自然放在桌边，肩膀轻轻放松。","targetX":0.5,"kind":"table"},
+  {"id":"table_arm","name":"前臂轻放","scene":"桌边室内","framing":"half","requires":["允许使用的稳固桌椅"],"action":"请对方把前臂轻放在桌面，身体保持舒适，不必撑住下巴。","targetX":0.62,"kind":"table"},
+  {"id":"table_look","name":"望向窗边","scene":"桌边室内","framing":"half","requires":["允许使用的稳固桌椅","可确认的侧方光源"],"action":"请对方保持坐姿，目光转向侧方光线，不要直视强光。","targetX":0.38,"kind":"table"}
+]
